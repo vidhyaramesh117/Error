@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
         android:background="#0b76bd"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
@@ -16,28 +18,38 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:contentScrim="#0b76bd"
-            app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            app:title="WHATSAPP">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:scaleType="centerCrop"
                 android:src="@drawable/dp"
-                app:layout_collapseMode="parallax" />
+                app:layout_collapseMode="parallax"
+                android:scaleType="centerCrop" />
+
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/tb"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:layout_scrollFlags="scroll|enterAlways"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                app:layout_collapseMode="pin">
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+                android:layout_gravity="top">
 
             </androidx.appcompat.widget.Toolbar>
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
+        <include layout="@layout/tab" />
+
     </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/vp"
+        app:layout_constraintEnd_toEndOf="@id/app_bar"/>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -57,7 +69,5 @@
 
     </androidx.core.widget.NestedScrollView>
 
-    <include
-        layout="@layout/tab" />
 
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
