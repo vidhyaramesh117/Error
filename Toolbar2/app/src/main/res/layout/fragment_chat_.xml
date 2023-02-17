@@ -19,4 +19,8 @@
         android:layout_alignParentBottom="true"
         android:id="@+id/bn"
         app:menu="@menu/bottom_nav_items"/>
+
+    <include
+        layout="@layout/card_layout" />
+
 </RelativeLayout>
