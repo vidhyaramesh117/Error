@@ -12,8 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 
-public class stared_Fragment extends Fragment
-{
+public class stared_Fragment extends Fragment {
     View rootview;
 
     @Override

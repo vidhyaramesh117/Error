@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -16,6 +17,10 @@ import java.util.ArrayList;
 public class new_group_Fragment extends Fragment
 {
     View rootview;
+
+    RecyclerView recyclerView;
+    ArrayList<String> arrayList=new ArrayList<>();
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
@@ -34,6 +39,10 @@ public class new_group_Fragment extends Fragment
         recyclerModelArrayList.add(new recycler_model(R.drawable.recycler_img,"FFF","Fitness"));
         recyclerModelArrayList.add(new recycler_model(R.drawable.recycler_img,"Music zone","Songs space"));
         recyclerModelArrayList.add(new recycler_model(R.drawable.recycler_img,"Gtec","Students"));
+
+
+
+
 
         RecyclerAdapter recyclerAdapter = new RecyclerAdapter(getActivity(),recyclerModelArrayList);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);

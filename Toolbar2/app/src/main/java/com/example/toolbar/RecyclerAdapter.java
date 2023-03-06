@@ -10,15 +10,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.text.CollationElementIterator;
 import java.util.ArrayList;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Viewholder>
 {
     private final Context context;
-    private final ArrayList<recycler_model>recyclerModelArrayList;
+    private ArrayList<recycler_model>recyclerModelArrayList = null;
 
-    public RecyclerAdapter(Context context,ArrayList<recycler_model>recyclerModelArrayList)
+    public RecyclerAdapter(Context context, ArrayList<recycler_model> recyclerModelArrayList)
     {
         this.context = context;
         this.recyclerModelArrayList = recyclerModelArrayList;
@@ -39,6 +38,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Viewho
         holder.image.setImageResource(model.getGrp_image());
         holder.name.setText(model.getGrp_name());
         holder.content.setText(model.getGrp_cont());
+
     }
 
     @Override
