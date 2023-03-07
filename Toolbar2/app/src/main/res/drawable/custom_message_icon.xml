@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<!--    edit text in focus-->
+    <item
+        android:drawable="@drawable/et_message"
+        android:state_focused="true" />
+
+<!--    edit text out of focus-->
+    <item
+        android:drawable="@drawable/et_message"
+        android:state_focused="false" />
+</selector>

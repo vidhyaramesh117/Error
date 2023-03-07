@@ -3,50 +3,99 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#22dde3"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".new_broadcast_Fragment">
 
-    <EditText
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tf_text"
         android:hint="Message"
+        android:textColorHint="@color/black"
         android:inputType="text"
-        android:paddingTop="15dp"/>
+        android:paddingTop="15dp"
+        android:paddingLeft="15dp"
+        android:drawableStart="@drawable/custom_message_icon"
+        android:background="@drawable/custom_edittext_cut"/>
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tf_email"
         android:hint="Email"
+        android:textColorHint="@color/black"
         android:inputType="textEmailAddress"
-        android:paddingTop="15dp"/>
+        android:paddingTop="15dp"
+        android:paddingLeft="15dp"/>
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tf_uri"
         android:hint="Url"
+        android:textColorHint="@color/black"
         android:inputType="textUri"
-        android:paddingTop="15dp"/>
+        android:paddingTop="15dp"
+        android:paddingLeft="15dp"/>
 
-    <EditText
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tf_num"
         android:hint="Number"
+        android:textColorHint="@color/black"
         android:inputType="number"
-        android:paddingTop="15dp"/>
+        android:paddingTop="15dp"
+        android:paddingLeft="15dp"
+        android:drawableStart="@drawable/custom_number_icon"
+        android:background="@drawable/custom_edittext_cut"/>
 
-    <EditText
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tf_phone"
         android:hint="Phone"
+        android:textColorHint="@color/black"
         android:inputType="phone"
-        android:paddingTop="15dp" />
+        android:paddingTop="15dp"
+        android:paddingLeft="15dp"
+        android:drawableStart="@drawable/custom_phone_icon"
+        android:background="@drawable/custom_edittext_cut"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="15dp" />
+
+    <!--default    -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:hint="Default" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--filled box dense-->
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="15dp"-->
+<!--        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"-->
+<!--        app:boxBackgroundColor="@color/purple_200" >-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content" />-->
+
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
 
 
 
