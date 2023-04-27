@@ -33,7 +33,7 @@ public class notification extends AppCompatActivity
 
         notification = findViewById(R.id.btn_notification);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.0)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S)
         {
             NotificationChannel notificationChannel = new NotificationChannel("Notification","Notification",NotificationManager.IMPORTANCE_DEFAULT);
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
@@ -45,11 +45,19 @@ public class notification extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
+                @SuppressWarnings("unchecked")
+
+                Intent intent = new Intent(getApplicationContext(),notification_display.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+                PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(),1,intent,PendingIntent.FLAG_ONE_SHOT);
+
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(com.example.advanced_app.notification.this,"Notification");
                 builder.setContentTitle("Application");
                 builder.setContentText("App processing");
                 builder.setSmallIcon(R.drawable.ic_launcher_background);
                 builder.setAutoCancel(true);
+                builder.setContentIntent(pendingIntent);
 
                 NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(com.example.advanced_app.notification.this);
                 if (ActivityCompat.checkSelfPermission(com.example.advanced_app.notification.this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED)
